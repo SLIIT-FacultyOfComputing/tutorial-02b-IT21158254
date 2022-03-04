@@ -13,7 +13,7 @@ Do not modify the main function.*/
 
 #include <iostream>
 
-long Factorial(int no);
+long factorial(int no);
 long nCr(int n, int r);
 
 int main() {
@@ -26,4 +26,18 @@ int main() {
   std::cout << nCr(n,r);
   std::cout << std::endl;
   return 0;
+}
+long factorial(int no)
+{
+  long result = 1;
+  int c;
+  for(c=1;c<=no;c++)
+    result = result +c;
+  return result;
+}
+long nCr(int n, int r)
+{
+  long result;
+  result = factorial(n)/(factorial(r)*factorial(n-r));
+  return result;
 }
